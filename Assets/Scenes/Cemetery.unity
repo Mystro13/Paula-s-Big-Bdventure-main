@@ -8422,6 +8422,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 708843075}
   optionsMenuUI: {fileID: 713561841}
+<<<<<<< HEAD
+=======
+  objectsToPause:
+  - {fileID: 1685426764}
+  - {fileID: 45316799}
+  - {fileID: 955788641}
+  - {fileID: 782835421}
+  - {fileID: 821328702}
+  - {fileID: 761801688}
+  - {fileID: 924083203}
+  - {fileID: 1388247965}
+  - {fileID: 577123973}
+  - {fileID: 1696419855}
+  - {fileID: 139887164}
+  - {fileID: 908092858}
+>>>>>>> 6a4d87566346ef2fee92ee3f4c70a6305ffe92bb
 --- !u!114 &1607790804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8991,7 +9007,11 @@ Transform:
   - {fileID: 1385234998}
   - {fileID: 1650935051}
   m_Father: {fileID: 0}
+<<<<<<< HEAD
   m_RootOrder: 29
+=======
+  m_RootOrder: 28
+>>>>>>> 6a4d87566346ef2fee92ee3f4c70a6305ffe92bb
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1688957723 stripped
 GameObject:

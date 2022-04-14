@@ -3,9 +3,12 @@ using UnityEngine;
 
 public class MainMenu : MonoBehaviour
 {
+<<<<<<< HEAD
 
    public GameObject mainMenu;
    public GameObject levelMenu;
+=======
+>>>>>>> 6a4d87566346ef2fee92ee3f4c70a6305ffe92bb
    public void StartGame()
    {
       InitializePlayerData();
@@ -26,6 +29,7 @@ public class MainMenu : MonoBehaviour
       //UnityEditor.EditorApplication.isPlaying = false;
    }
 
+<<<<<<< HEAD
    public void GoToCemetery()
    {
       InitializePlayerData();
@@ -78,6 +82,8 @@ public class MainMenu : MonoBehaviour
          levelMenu.SetActive(false);
       }
    }
+=======
+>>>>>>> 6a4d87566346ef2fee92ee3f4c70a6305ffe92bb
    void InitializePlayerData()
    {
       if (PlayerData.current == null)

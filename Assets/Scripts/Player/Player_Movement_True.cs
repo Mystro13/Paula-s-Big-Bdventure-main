@@ -70,8 +70,13 @@ public class Player_Movement_True : MonoBehaviour
          }
       }
 
+<<<<<<< HEAD
       turner = mouse.delta.x.ReadValue();// * PlayerData.current.CameraSensitivity * SceneLoader.instance.MaxCameraSensitivity;
       looker = mouse.delta.y.ReadValue();// * PlayerData.current.CameraSensitivity * SceneLoader.instance.MaxCameraSensitivity;
+=======
+      turner = mouse.delta.x.ReadValue() * PlayerData.current.CameraSensitivity * SceneLoader.instance.MaxCameraSensitivity;
+      looker = -mouse.delta.y.ReadValue() * PlayerData.current.CameraSensitivity * SceneLoader.instance.MaxCameraSensitivity;
+>>>>>>> 6a4d87566346ef2fee92ee3f4c70a6305ffe92bb
       if (turner != 0)
       {
          //Code for action on mouse moving right
