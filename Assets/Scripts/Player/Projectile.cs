@@ -39,6 +39,7 @@ public class Projectile : MonoBehaviour
          //enemyHealth.DepleteHealth(healthDamage);
          enemyHealth.GetKilled();
          Destroy(gameObject);
+         AudioManager.instance.Play(GameSounds.EnemyIsHit);
       }
    }
 
@@ -52,6 +53,7 @@ public class Projectile : MonoBehaviour
          //enemyHealth.DepleteHealth(healthDamage);
          enemyHealth.GetKilled();
          Destroy(gameObject);
+         AudioManager.instance.Play(GameSounds.EnemyIsHit);
       }
    }
 }

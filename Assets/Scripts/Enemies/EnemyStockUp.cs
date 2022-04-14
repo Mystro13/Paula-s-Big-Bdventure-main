@@ -27,29 +27,43 @@ public class EnemyStockUp : MonoBehaviour
    public void DropItems()
    {
       hasStockedUp = false;
+      Debug.Log($"Drop items {stockItems.Count}");
       foreach (GameObject dropping in stockItems)
       {
-         dropping.transform.position = gameObject.transform.position;
+         Debug.Log("Drop");
+         dropping.transform.position = GeneratedPosition(gameObject.transform.position);
          dropping.transform.rotation = gameObject.transform.rotation;
+         dropping.transform.parent = null;
          dropping.SetActive(true);
       }
       stockItems = new List<GameObject>();
    }
    void ExecuteStockUpOn(GameObject stockItemObject, int maximum)
    {
+      Debug.Log($"Stock {stockItems.Count} {capacity} {maximum}");
       if (stockItems.Count < capacity)
       {
-         int count = Random.Range(0, maximum);
+         int count = Random.Range(1, maximum);
          if (count > 0)
          {
-            GameObject clone = Instantiate(stockItemObject, transform.position, transform.rotation);
+            GameObject clone = Instantiate(stockItemObject, transform.position, transform.rotation,gameObject.transform);
             StockItem stockItem = clone.GetComponent<StockItem>();
             if (stockItem)
             {
+               clone.SetActive(false);
                stockItem.quantity = count;
                stockItems.Add(clone);
             }
          }
       }
+   }
+
+   Vector3 GeneratedPosition(Vector3 centralPosition)
+   {
+      float x, y, z;
+      x = Random.Range(-3f, 3f);
+      y = 0f;
+      z = Random.Range(-3f, 3f);
+      return new Vector3(x, y, z) + centralPosition;
    }
 }

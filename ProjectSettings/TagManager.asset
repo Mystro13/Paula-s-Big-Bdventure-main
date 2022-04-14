@@ -9,6 +9,7 @@ TagManager:
   - enemies
   - interactionObject
   - SwordGrip
+  - Sword
   layers:
   - Default
   - TransparentFX

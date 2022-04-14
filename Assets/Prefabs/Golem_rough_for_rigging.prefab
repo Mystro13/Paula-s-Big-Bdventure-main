@@ -130,6 +130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 0}
   health: 10
+  enemyStockUp: {fileID: 0}
 --- !u!114 &1015707840355575733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,10 +145,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stockItems: []
   capacity: 10
-  ammoMaxStock: 1
-  manaMaxStock: 1
-  healthPotionMaxStock: 1
-  permaHealthMaxStock: 1
+  ammoMaxStock: 3
+  manaMaxStock: 3
+  healthPotionMaxStock: 3
+  permaHealthMaxStock: 3
   ammoObject: {fileID: 2487417612733739069, guid: fb87ad78945d1de4ab3ef2b48866c61a, type: 3}
   manaObject: {fileID: 8274076742704231749, guid: d9276d9f21af74c488a2a1dc7bde37fd, type: 3}
   healthPotionObject: {fileID: 3206258122975669834, guid: 15853cb2aaaa3b3439c8788449d72bf7, type: 3}

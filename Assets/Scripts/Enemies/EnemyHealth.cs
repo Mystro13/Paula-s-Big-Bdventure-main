@@ -10,21 +10,17 @@ public class EnemyHealth : MonoBehaviour
    [SerializeField]
    float health = 10f;
    float maximumHealth;
+   [SerializeField]
    EnemyStockUp enemyStockUp;
-   public bool isAwaken;
 
    private void Awake()
    {
       maximumHealth = health;
       enemyStockUp = gameObject.GetComponent<EnemyStockUp>();
-      isAwaken = false;
+      enemyStockUp.StockUp();
    }
    void Update()
    {
-      if (enemyStockUp && !enemyStockUp.hasStockedUp)
-      {
-         enemyStockUp.StockUp();
-      }
       UpdateHUD();
 
       if (health <= 0)
@@ -42,22 +38,14 @@ public class EnemyHealth : MonoBehaviour
 
    public void DepleteHealth(int healthDamage)
    {
-      if (isAwaken)
-      {
-         health -= 1;
-      }
+      health -= healthDamage;
    }
 
    void Death()
    {
-      if (isAwaken)
-      {
-         if (enemyStockUp && enemyStockUp.hasStockedUp)
-         {
-            enemyStockUp.DropItems();
-         }
-         GameObject.Destroy(gameObject);
-      }
+      Debug.Log($"Death {enemyStockUp.name}");
+      enemyStockUp.DropItems();
+      Destroy(gameObject);
    }
 
    public void GetKilled()

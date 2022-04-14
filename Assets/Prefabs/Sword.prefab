@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6743093696979405229}
   m_Layer: 0
   m_Name: MagicPoint
-  m_TagString: Untagged
+  m_TagString: Sword
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 5275894486415928918}
   m_Layer: 0
   m_Name: Sword
-  m_TagString: Untagged
+  m_TagString: Sword
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -186,4 +186,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da8ab332a590cf74ca64845698c25659, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  swordGrip: {fileID: 0}
+  playerHealth: {fileID: 0}

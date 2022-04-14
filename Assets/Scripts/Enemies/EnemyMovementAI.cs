@@ -108,12 +108,14 @@ public class EnemyMovementAI : MonoBehaviour
          if (playerHealth)
          {
             playerHealth.DepleteHealth();
+            AudioManager.instance.Play(GameSounds.PlayerIsHit);
          }
 
          EnemyHealth enemyHealth = gameObject.GetComponent<EnemyHealth>();
          if (enemyHealth)
          {
             enemyHealth.GetKilled();
+            AudioManager.instance.Play(GameSounds.EnemyIsHit);
          }
       }
    }
@@ -126,12 +128,14 @@ public class EnemyMovementAI : MonoBehaviour
          if (playerHealth)
          {
             playerHealth.GetKilled();
+            AudioManager.instance.Play(GameSounds.PlayerIsHit);
          }
 
          EnemyHealth enemyHealth = gameObject.GetComponent<EnemyHealth>();
          if (enemyHealth)
          {
             enemyHealth.GetKilled();
+            AudioManager.instance.Play(GameSounds.EnemyIsHit);
          }
       }
    }
@@ -369,7 +373,7 @@ public class EnemyMovementAI : MonoBehaviour
       if (enemyHealth)
       {
          Debug.Log("Awaken!!");
-         enemyHealth.isAwaken = isAwaken;
+         //enemyHealth.isAwaken = isAwaken;
       }
    }
 }
