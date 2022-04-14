@@ -4,11 +4,9 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 public class PauseMenuScript : MonoBehaviour
 {
+   public static bool isPaused = false;
    public GameObject pauseMenuUI;
    public GameObject optionsMenuUI;
-<<<<<<< HEAD
-
-=======
    public GameObject[] objectsToPause;
    bool pauseAction = false;
    private float noClickTime = 0.0f;
@@ -76,34 +74,29 @@ public class PauseMenuScript : MonoBehaviour
       isPaused = true;
       Time.timeScale = 0f;
    }
->>>>>>> 6a4d87566346ef2fee92ee3f4c70a6305ffe92bb
 
    public void GoToMainMenu()
    {
+      ResumeGame();
       SceneLoader.instance.Load(SceneLoader.Scene.MainMenu);
       Debug.Log("Go To Main Menu");
    }
 
    public void OpenOptionsMenu()
    {
-      SetGameObjectState(pauseMenuUI, false);
-      SetGameObjectState(optionsMenuUI, true);
+      if(isPaused)
+      {
+         SetGameObjectState(pauseMenuUI, false);
+         SetGameObjectState(optionsMenuUI, true);
+      }
    }
-
    public void CloseOptionsMenu()
    {
-      if (PlayerData.current != null)
-      {
-         PlayerData.current.AudioVolume = SceneLoader.instance.AudioVolume.value;
-         PlayerData.current.EFXVolume = SceneLoader.instance.EFXVolume.value;
-         PlayerData.current.CameraSensitivity = SceneLoader.instance.CameraSensitivity.value;
-      }
-      SetGameObjectState(pauseMenuUI, true);
-      SetGameObjectState(optionsMenuUI, false);
+      PauseGame();
    }
    void SetGameObjectState(GameObject obj, bool state)
    {
-      if (obj)
+      if(obj)
       {
          obj.SetActive(state);
       }

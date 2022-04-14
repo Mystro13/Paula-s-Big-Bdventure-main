@@ -391,67 +391,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 73628352}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
-<<<<<<< HEAD
---- !u!1 &81537251
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 81537253}
-  - component: {fileID: 81537252}
-  m_Layer: 0
-  m_Name: AudioManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &81537252
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 81537251}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81dfd86a6e22b954e96ec0b5948cca8c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soundCatalog:
-  - whichSound: 0
-    clip: {fileID: 8300000, guid: d3dd5619e2ef4fe4b99ddaf109bca03b, type: 3}
-    volume: 1
-    pitch: 0.89
-    loop: 1
-    EFX: 0
-    source: {fileID: 0}
-  - whichSound: 0
-    clip: {fileID: 8300000, guid: a6671aabe32d42843832fb81df34cb80, type: 3}
-    volume: 1
-    pitch: 0.36
-    loop: 1
-    EFX: 0
-    source: {fileID: 0}
---- !u!4 &81537253
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 81537251}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1223.8384, y: 117.46681, z: -18.702454}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-=======
->>>>>>> 6a4d87566346ef2fee92ee3f4c70a6305ffe92bb
 --- !u!1 &86151643
 GameObject:
   m_ObjectHideFlags: 0
@@ -3096,8 +3035,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd683d725e3fce04c9ca01076e7b8aaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainMenu: {fileID: 0}
-  levelMenu: {fileID: 0}
 --- !u!114 &962199930
 MonoBehaviour:
   m_ObjectHideFlags: 0
