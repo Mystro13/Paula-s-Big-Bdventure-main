@@ -25,8 +25,6 @@ public class SceneLoader:MonoBehaviour
    public float MaxAudioVolume  = 10;
    public float MaxEFXVolume = 10;
    public float MaxCameraSensitivity = 10;
-   public PlayerData savedPlayerData = null;
-
    //We may need to save the full player between scenes
    GameObject savedPlayer;
    PlayerInteraction playerInteraction;
@@ -35,21 +33,15 @@ public class SceneLoader:MonoBehaviour
    public Transform playerSceneTarget;
    public void Load(Scene scene)
    {
-      if ( savedPlayer )
-      {
-         playerInteraction = savedPlayer.GetComponent<PlayerInteraction>();
-         if(playerInteraction )
-         {
-            savedPlayerData = playerInteraction.GetPlayerData();
-         }
-      }
+      SaveLoadData.Save();
       SceneManager.LoadScene(scene.ToString());
-      if (savedPlayerData!=null && savedPlayer)
+      SaveLoadData.Load();
+      if (savedPlayer)
       {
          playerInteraction = savedPlayer.GetComponent<PlayerInteraction>();
          if (playerInteraction)
          {
-            playerInteraction.SetPlayerData(savedPlayerData);
+            playerInteraction.SetPlayerData(PlayerData.current);
          }
       }
    }
@@ -71,19 +63,12 @@ public class SceneLoader:MonoBehaviour
 
       if (gameObject)
       {
-         if (AudioVolume != null)
+         if (PlayerData.current != null)
          {
-            AudioVolume.value = 0.2f;
+            AudioVolume.value = PlayerData.current.AudioVolume;
+            EFXVolume.value = PlayerData.current.EFXVolume;
+            CameraSensitivity.value = PlayerData.current.CameraSensitivity;
          }
-         if (EFXVolume != null)
-         {
-            EFXVolume.value = 0.5f;
-         }
-         if (CameraSensitivity != null)
-         {
-            CameraSensitivity.value = 0.2f;
-         }
-
       }
    }
 

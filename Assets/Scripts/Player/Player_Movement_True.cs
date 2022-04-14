@@ -30,6 +30,10 @@ public class Player_Movement_True : MonoBehaviour
 
    void Update()
    {
+      if (SceneLoader.instance == null)
+      {
+         return;
+      }
       // Control input with WASD + Mouse
       Keyboard keyboard = Keyboard.current;
       Mouse mouse = Mouse.current;
@@ -52,8 +56,8 @@ public class Player_Movement_True : MonoBehaviour
          }
       }
 
-      turner = mouse.delta.x.ReadValue() * SceneLoader.instance.CameraSensitivity.value * SceneLoader.instance.MaxCameraSensitivity;
-      looker = -mouse.delta.y.ReadValue() * SceneLoader.instance.CameraSensitivity.value * SceneLoader.instance.MaxCameraSensitivity;
+      turner = mouse.delta.x.ReadValue() * PlayerData.current.CameraSensitivity * SceneLoader.instance.MaxCameraSensitivity;
+      looker = -mouse.delta.y.ReadValue() * PlayerData.current.CameraSensitivity * SceneLoader.instance.MaxCameraSensitivity;
       if (turner != 0)
       {
          //Code for action on mouse moving right

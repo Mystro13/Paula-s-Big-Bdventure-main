@@ -8,7 +8,8 @@ public class PauseMenuScript : MonoBehaviour
    public GameObject pauseMenuUI;
    public GameObject optionsMenuUI;
    public GameObject[] objectsToPause;
-
+   bool pauseAction = false;
+   private float noClickTime = 0.0f;
    private void Awake()
    {
       if (pauseMenuUI)
@@ -23,8 +24,20 @@ public class PauseMenuScript : MonoBehaviour
    void Update()
    {
       Keyboard keyboard = Keyboard.current;
-      if (keyboard.backspaceKey.ReadValue() > 0f)
+      if (keyboard.backspaceKey.ReadValue() > 0f && noClickTime <=0f )
       {
+         pauseAction = true;
+         Debug.Log($"pause action {pauseAction}");
+      }
+      noClickTime -= Time.deltaTime;
+   }
+   void FixedUpdate()
+   {
+      Debug.Log($"Fxed Update {pauseAction}");
+      if (pauseAction)
+      {
+         noClickTime = 1f;
+         pauseAction = false;
          if (isPaused)
          {
             ResumeGame();
@@ -35,11 +48,16 @@ public class PauseMenuScript : MonoBehaviour
          }
          foreach (GameObject obj in objectsToPause)
          {
-            SetGameObjectState( obj, !isPaused);
+            SetGameObjectState(obj, !isPaused);
+         }
+         if (PlayerData.current != null)
+         {
+            PlayerData.current.AudioVolume = SceneLoader.instance.AudioVolume.value;
+            PlayerData.current.EFXVolume = SceneLoader.instance.EFXVolume.value;
+            PlayerData.current.CameraSensitivity = SceneLoader.instance.CameraSensitivity.value;
          }
       }
    }
-
    void ResumeGame()
    {
       SetGameObjectState(pauseMenuUI, false);
